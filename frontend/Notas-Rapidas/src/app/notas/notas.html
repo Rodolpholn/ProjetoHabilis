@@ -1,1 +1,21 @@
-<p>notas works!</p>
+<h3>Notas do Cliente</h3>
+
+<div *ngIf="notes.length > 0; else noNotes">
+  <ul>
+    <li *ngFor="let note of notes">
+      {{ note.text }} (Criado em: {{ note.createdAt | date : 'short' }})
+    </li>
+  </ul>
+</div>
+
+<ng-template #noNotes>
+  <p>Nenhuma nota encontrada para este cliente.</p>
+</ng-template>
+
+<hr />
+
+<div>
+  <h4>Adicionar nova nota</h4>
+  <textarea [(ngModel)]="newNoteText" placeholder="Digite sua nota aqui..."></textarea>
+  <button (click)="addNote()">Adicionar Nota</button>
+</div>
