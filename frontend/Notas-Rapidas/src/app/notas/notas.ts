@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common'; // Necessário para diretivas como *ngIf e *ngFor
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-notas',
-  standalone: true, // Garante que o componente seja tratado como standalone
-  imports: [CommonModule, FormsModule], // Adicione os módulos de formulário e comuns
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './notas.html',
   styleUrl: './notas.css',
 })
@@ -14,7 +14,7 @@ export class Notas implements OnInit {
   @Input() clientId: string = '';
   public notes: any[] = [];
   public newNoteText: string = '';
-  private API_URL = 'http://localhost:3000'; // Substitua pela URL da sua API
+  private API_URL = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
@@ -44,8 +44,9 @@ export class Notas implements OnInit {
 
     this.http.post<any>(`${this.API_URL}/clients/${this.clientId}/notes`, body).subscribe(
       (note) => {
-        this.notes.push(note);
         this.newNoteText = '';
+
+        this.getNotes();
       },
       (error) => {
         console.error('Erro ao adicionar nota:', error);
