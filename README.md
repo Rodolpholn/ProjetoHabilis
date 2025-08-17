@@ -1,59 +1,57 @@
-# NotasRapidas
+#Projeto Notas Rápidas
+Este é um mini projeto full-stack, desenvolvido como parte de um processo seletivo, que implementa uma funcionalidade de "Notas Rápidas" para um sistema de CRM. A aplicação permite que usuários adicionem e visualizem notas associadas a clientes específicos, demonstrando habilidades de desenvolvimento e integração entre frontend e backend.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
+Funcionalidades
+Adicionar Notas: Um formulário no frontend para criar novas notas.
 
-## Development server
+Visualizar Notas: Exibição da lista de notas de um cliente específico.
 
-To start a local development server, run:
+API RESTful: Endpoints de backend para gerenciar as notas (POST e GET).
 
-```bash
-ng serve
-```
+Componente Dinâmico: O frontend atualiza a lista de notas automaticamente após a inserção.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Tecnologias Utilizadas
+Backend: Node.js com o framework Express.js.
 
-## Code scaffolding
+Frontend: Angular (com arquitetura de componentes autônomos).
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Banco de Dados: MySQL (a modelagem está disponível no código).
 
-```bash
-ng generate component component-name
-```
+Como Rodar o Projeto
+Siga os passos abaixo para configurar e executar o projeto em sua máquina.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Pré-requisitos
+Node.js e npm instalados.
 
-```bash
-ng generate --help
-```
+Angular CLI instalado globalmente (npm install -g @angular/cli).
 
-## Building
+Backend
+Navegue até a pasta backend e instale as dependências:
 
-To build the project run:
+Bash
 
-```bash
-ng build
-```
+npm install
+Inicie o servidor Node.js. O banco de dados é em memória, então será resetado a cada reinício.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Bash
 
-## Running unit tests
+node app.js
+O servidor estará rodando em http://localhost:3000.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Frontend
+Navegue até a pasta frontend e instale as dependências:
 
-```bash
-ng test
-```
+Bash
 
-## Running end-to-end tests
+npm install
+Inicie a aplicação Angular. Ela se conectará automaticamente ao backend.
 
-For end-to-end (e2e) testing, run:
+Bash
 
-```bash
-ng e2e
-```
+ng serve --open
+O aplicativo será aberto no seu navegador em http://localhost:4200/.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Uso
+Ao acessar a aplicação, você verá o componente de notas.
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Use o campo de texto para adicionar uma nota e clique no botão para salvar. A lista será atualizada automaticamente.
